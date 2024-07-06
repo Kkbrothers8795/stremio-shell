@@ -13,7 +13,9 @@ RUN echo 'builduser ALL=(ALL) ALL' >> /etc/sudoers
 WORKDIR /home/builduser
 
 # Import the required files
-ADD package.sh .
+ADD /distros/Ubuntu/mkconfig.sh .
+ADD distros/Ubuntu/package.sh .
 
+EXPOSE 11470:11470
 RUN mkdir -p /usr/share/desktop-directories
 
